@@ -1,0 +1,1 @@
+x86_64-w64-mingw32-g++ -shared -o nmatrix_lapacke.so nmatrix_lapacke.o math_lapacke.o lapacke.o -L. -L/C/msys64/mingw64/lib -pipe -pipe -Wl,--enable-auto-image-base,--enable-auto-import nmatrix_lapacke-x64-mingw32.def   -llapack -lgslcblas -lnmatrix  -lx64-msvcrt-ruby240 -llapack  -lgmp -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi
