@@ -38,6 +38,11 @@ flags = " --include=#{fftw_incdir} --libdir=#{fftw_libdir}"
 
 if have_library("fftw3")
   $CFLAGS += [" -lfftw3 -lm #{$CFLAGS} #{$flags}"].join(" ")
+
+  if ENV['OS'] == 'Windows_NT'
+    $DLDFLAGS += ' -lnmatrix '
+  end
+
   dir_config('nmatrix_fftw', fftw_incdir, fftw_libdir)
   dir_config('nmatrix_fftw')
 end
